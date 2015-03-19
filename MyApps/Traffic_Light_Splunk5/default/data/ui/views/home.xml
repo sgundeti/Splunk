@@ -1,0 +1,58 @@
+<dashboard> 
+<label>Home</label>
+<row>
+        <html>
+            <h1>And here's how it's done...</h1>
+            <h2>Overview</h2>
+            <p>These example use Splunk's "<a href="http://docs.splunk.com/Documentation/Splunk/6.2.0/SearchReference/Rangemap" target="_blank">rangemap</a>" command to display traffic lights that alternate depending on the threshold level set within the search.</p>
+            <p>We use a "<a href="http://docs.splunk.com/Documentation/Splunk/6.2.0/Viz/Visualizationreference#Single-value_visualizations" target="_blank">single value</a>" panel to display the output of the search using the default rangemap config.</p>
+            <p>In the stylesheet we attach the different traffic light images to the default rangemap classes.</p>
+            <hr />
+            <h2>The CSS for Splunk 5</h2>
+            <p>All images and CSS stored in:</p>
+            <pre>$SPLUNKAPP/appserver/static</pre>
+            <p>trafficlightSplunk5.css</p>
+            <pre>
+.SingleValueHolder {
+	 background-repeat: no-repeat;
+     padding-left: 60px; 
+     padding-top: 40px;
+     height:100px;
+}
+
+.SingleValueHolder.low{
+     background-image: url('green_light-39x100.png'); 
+	 background-position: 55px 10px;
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+ }
+ .SingleValueHolder.elevated{
+     background-image: url('orange_light-40x100.png');
+	 background-position: 55px 10px;
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+
+ }
+  .SingleValueHolder.severe{
+     background-image: url('red_light-40x100.png');
+	 background-position: 55px 10px;
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+ }
+  .SingleValueHolder.none{
+     background-image: url('none-light-39x100.png');
+	 background-position: 55px 10px;
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+ }
+ .icon-only .single-result {
+    display: none;
+}
+		</pre>
+        <p>NOTE: This is tested only in Splunk 5.0.5</p>
+		</html>
+
+
+		
+ </row>
+</dashboard>

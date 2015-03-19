@@ -1,0 +1,37 @@
+.SingleValueHolder {
+	 background-repeat: no-repeat;
+     padding-left: 60px; 
+     padding-top: 40px;
+     height:100px;
+}
+
+.SingleValueHolder.low{
+     background-image: url('green_light-39x100.png'); 
+	 background-position: 55px 10px;
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+ }
+ .SingleValueHolder.elevated{
+     background-image: url('orange_light-40x100.png');
+	 background-position: 55px 10px;
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+
+ }
+  .SingleValueHolder.severe{
+     background-image: url('red_light-40x100.png');
+	 background-position: 55px 10px;
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+ }
+  .SingleValueHolder.none{
+     background-image: url('none-light-39x100.png');
+	 background-position: 55px 10px;
+	 padding-top: 25px;
+	 padding-bottom: 0px;
+ }
+ .icon-only .single-result {
+    display: none;
+}
+
+

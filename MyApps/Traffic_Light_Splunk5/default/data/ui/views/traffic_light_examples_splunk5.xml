@@ -1,0 +1,36 @@
+<view template="dashboard.html" stylesheet="trafficlightSplunk5.css" >
+
+<label>Splunk 5</label>
+  
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="SideviewUtils" layoutPanel="appHeader"/>
+  
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">splunk.search.info</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+    
+    
+  <module name="HiddenSearch" layoutPanel="panel_row1_col1"  group="INTERNAL" autoRun="True">
+                <param name="search">index=_internal | stats count as value |  rangemap field=value low=1800-10000 elevated=500-1799 severe=100-499  </param>
+                <param name="earliest">rt-5m</param>
+                <param name="latest">rt</param>
+   
+                <module name="SingleValue">
+                 <param name="classField">range</param>
+                </module>
+  </module>
+    
+  <module name="HiddenSearch" layoutPanel="panel_row1_col2"  group="AUDIT" autoRun="True">
+                <param name="search">index=_audit | stats count as value |  rangemap field=value low=500-50000 elevated=100-499 severe=0-99  </param>
+                <param name="earliest">rt-30m</param>
+                <param name="latest">rt</param>
+   
+                <module name="SingleValue">
+                 <param name="classField">range</param>
+                </module>
+  </module>    
+    
+</view>

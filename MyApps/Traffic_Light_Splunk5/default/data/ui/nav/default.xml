@@ -1,0 +1,9 @@
+<nav>
+    <collection label="Home" >
+		<view name="home" default='true' />
+    </collection>
+	<collection label="Traffic Light Examples" >
+		<view name="traffic_light_examples_splunk5"  />
+    </collection>
+ 	
+</nav>
